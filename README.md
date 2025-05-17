@@ -1,2 +1,2 @@
-# dhs-registration-form
-Form selector for DHS Class of 1975 Reunion
+# Easy Reunion Pro - registration-form
+Stable release used for live registration, no SMS features
