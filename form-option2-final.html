@@ -322,10 +322,26 @@ function submitForm(event) {
     });
     window.location.href = "thank-you-option2.html?" + params.toString();
   })
-  .catch((error) => {
-    alert("Something went wrong. Please try again later.");
-    console.error("Submission error:", error);
-  });
+  .catch(error => {
+  console.error("Submission error:", error);
+
+  const formContainer = document.querySelector(".form-container") || document.body;
+  formContainer.innerHTML = `
+    <div style="background:#fff3cd; border:1px solid #ffeeba; padding:20px; border-radius:8px; text-align:center; max-width:600px; margin:auto;">
+      <h2 style="color:#856404;">😟 Oops! Something went wrong.</h2>
+      <p>We're sorry, but your registration did not go through as expected.</p>
+      <p>Please try again in a few minutes.</p>
+      <p>If the issue persists, contact <strong>Roger Walker</strong> for assistance:</p>
+      <p style="font-size:1.1em;"><strong>📞 (615) 861-0347</strong></p>
+      <p style="font-size:0.95em; color:#999;">Error Details: ${error.message}</p>
+    </div>
+  `;
+});
+
+
+
+
+  
 }
 </script>
 
