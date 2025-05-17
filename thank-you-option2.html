@@ -131,10 +131,10 @@
 
     const eventList = document.getElementById("eventList");
     eventNames.forEach(([label, classmateKey, guestKey]) => {
-      const classmateVal = params.get(classmateKey);
-      const guestVal = params.get(guestKey);
-      if (classmateVal || guestVal) {
-        const li = document.createElement("li");
+    const classmateVal = params.get(classmateKey);
+    const guestVal = params.get(guestKey);
+    if (classmateVal || guestVal) {
+    const li = document.createElement("li");
         li.textContent = `${label}: ${classmateVal || '-'} (Classmate), ${guestVal || '-'} (Guest)`;
         eventList.appendChild(li);
       }
@@ -158,6 +158,16 @@
       const totalDue = getParam('TotalDue') || "0.00";
       const registrationFee = parseFloat(totalDue) - parseFloat(legacyFund);    
       const email = getParam('email');
+      const emailMessage = document.getElementById("emailMessage");
+const downloadSection = document.getElementById("downloadSection");
+
+if (email && email.trim() !== "") {
+  emailMessage.innerHTML = `A confirmation was sent to <strong>${email}</strong>. Please check your inbox.`;
+  downloadSection.style.display = "none";
+} else {
+  downloadSection.style.display = "block";
+}
+
 
       function formatPhoneNumber(phone) {
         const digits = phone.replace(/\D/g, '');
