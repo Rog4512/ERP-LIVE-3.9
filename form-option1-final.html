@@ -296,7 +296,7 @@ function submitForm(event) {
   formData.append("legacy_fund", form.querySelector('[name="legacy_fund"]').value);
   formData.append("TotalDue", form.querySelector('[name="TotalDue"]').value);
 
-  fetch("https://script.google.com/macros/s/AKfycbxUcYEi4zCIxEcqCd-aG5mrk4hZ7TqIL5kWFHnnd0OvohfYDCZZykczxOESKyOu8g4ydA/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbxbRgn_qKnyJiao2jrRgbiDPQE8lWPCPJwuai63KGI3ZT02DbLwCeqJLVl8LMlx6B6dPw/exec", {
     method: "POST",
     body: formData,
     mode: "cors"
